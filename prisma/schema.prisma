@@ -39,7 +39,9 @@ model MembershipTier {
   tierLevel  Int
   createdAt  DateTime @default(now())
 }
-
+ // ADD THIS:
+  plans      MemberPlan[]
+}
 model MemberPlan {
   id            String   @id @default(uuid())
   userId        String
@@ -112,7 +114,8 @@ model Exercise {
   mediaUrl    String?
   tags        String[]
 }
-
+ prs         PR[]
+}
 model PR {
   id         String   @id @default(uuid())
   userId     String
